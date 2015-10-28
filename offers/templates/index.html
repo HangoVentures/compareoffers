@@ -1,0 +1,14 @@
+{% if latest_offers_list %}
+	<table>
+	{% for offer in latest_offers_list %}
+
+	<tr> 
+		<td><a href="{% url 'offers:detail' offer.id %}"> {{ offer.companyname }}</a></td>
+		<td>{{ offer.annualbase }}</td>
+	</tr>
+
+	{% endfor %}
+	</table>
+{% else %}
+	<p> No offers available </p>
+{% endif %}
